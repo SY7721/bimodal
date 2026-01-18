@@ -3,7 +3,7 @@ function the crosstalk threestate pathway
 clc
 close all
 clear all
-N=1000;  %% sample size
+N=100;  %% sample size
 lam = 0.1+4.9*rand();  kappa1 = 0.2;kappa2 = 0.2; q1 =  0.1+4.9*rand(); gamma =  0.1+4.9*rand(); nu =  5+45*rand(); delta = 1; 
 
 TT=200;  H=200;  eps=0.01;
@@ -133,5 +133,6 @@ end
 xdata=y8;
 
 end
+
 
 
