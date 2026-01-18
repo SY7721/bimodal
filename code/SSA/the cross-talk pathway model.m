@@ -1,4 +1,7 @@
-function the crostalk  pathway model
+
+clc
+close all
+clear all
 N1=100; %% sample size
  lam1=0.1+4.9*rand(); lam2=0.1+4.9*rand(); q1=rand(); gamma=0.1+4.9*rand(); nu=5+45*rand(); q2=1-q1; delta=1;
  %% steady time 
@@ -167,8 +170,8 @@ for i = 1:M
 end
 xdata=y;
 
-end
-xdata;
 
-end
+
+
+
 
