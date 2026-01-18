@@ -1,5 +1,5 @@
 function the crostalk  pathway model
-N1=100; %% sample size
+N1=100; 
  lam1=0.1+4.9*rand(); lam2=0.1+4.9*rand(); q1=rand(); gamma=0.1+4.9*rand(); nu=5+45*rand(); q2=1-q1; delta=1;
  %% steady time 
 vT=nu*delta;
@@ -173,4 +173,5 @@ for i=1:1:S;
 tdata(i)=i-1;
 end
 xdata;
+
 end
