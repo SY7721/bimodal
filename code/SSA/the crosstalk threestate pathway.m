@@ -4,7 +4,7 @@ clc
 close all
 clear all
 N=1000;  %% sample size
-lam = lam2_cross(zushu);  kappa1 = 0.2;kappa2 = 0.2; q1 = q1_cross(zushu); gamma = ga_cross(zushu); nu = v_cross(zushu); delta = 1; 
+lam = 0.1+4.9*rand();  kappa1 = 0.2;kappa2 = 0.2; q1 =  0.1+4.9*rand(); gamma =  0.1+4.9*rand(); nu =  5+45*rand(); delta = 1; 
 
 TT=200;  H=200;  eps=0.01;
 TP(1)=TT/H;
@@ -133,4 +133,5 @@ end
 xdata=y8;
 
 end
+
 
