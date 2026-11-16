@@ -1,22 +1,18 @@
 # install.packages(c("readxl", "pROC", "philentropy"))
-library(readxl)
+library(readr)
 library(pROC)
 library(philentropy)
 
-kk <- 4 # 1, 2, 3, 4
-if (kk == 1) {
-  counts_data  <- read_excel("tw_th_roc.xlsx", sheet = "tw_th")
-  counts_data1 <- read_excel("tw_th_roc.xlsx", sheet = "tw")
-} else if (kk == 2) {
-  counts_data  <- read_excel("tw_c_roc.xlsx", sheet = "tw_c")
-  counts_data1 <- read_excel("tw_c_roc.xlsx", sheet = "tw")
-} else if (kk == 3) {
-  counts_data  <- read_excel("th_cth_roc.xlsx", sheet = "th_cth")
-  counts_data1 <- read_excel("th_cth_roc.xlsx", sheet = "th")
-} else if (kk == 4) {
-  counts_data  <- read_excel("c_cth_roc.xlsx", sheet = "c_cth")
-  counts_data1 <- read_excel("c_cth_roc.xlsx", sheet = "c")
-}
+kk <- 1  # 1, 2, 3, 4
+cfg <- list(
+  list(f1 = "tw_th_expression.csv",  f2 = "tw_th_expression1.csv"),
+  list(f1 = "tw_c_expression.csv",   f2 = "tw_c_expression1.csv"),
+  list(f1 = "th_cth_expression.csv", f2 = "th_cth_expression1.csv"),
+  list(f1 = "c_cth_expression.csv",  f2 = "c_cth_expression1.csv")
+)[[kk]]
+
+counts_data  <- read_csv(cfg$f1)
+counts_data1 <- read_csv(cfg$f2)
 
 counts_data <- as.data.frame(counts_data)
 rownames(counts_data) <- counts_data[, 1]  
