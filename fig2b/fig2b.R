@@ -1,14 +1,27 @@
-library(DESeq2)
+# install.packages(c("readxl", "pROC", "philentropy"))
 library(readxl)
 library(pROC)
 library(philentropy)
 
-counts_data <- read_excel("tw_th_roc.xlsx", sheet = "tw_th")                      
+kk <- 4 # 1, 2, 3, 4
+if (kk == 1) {
+  counts_data  <- read_excel("tw_th_roc.xlsx", sheet = "tw_th")
+  counts_data1 <- read_excel("tw_th_roc.xlsx", sheet = "tw")
+} else if (kk == 2) {
+  counts_data  <- read_excel("tw_c_roc.xlsx", sheet = "tw_c")
+  counts_data1 <- read_excel("tw_c_roc.xlsx", sheet = "tw")
+} else if (kk == 3) {
+  counts_data  <- read_excel("th_cth_roc.xlsx", sheet = "th_cth")
+  counts_data1 <- read_excel("th_cth_roc.xlsx", sheet = "th")
+} else if (kk == 4) {
+  counts_data  <- read_excel("c_cth_roc.xlsx", sheet = "c_cth")
+  counts_data1 <- read_excel("c_cth_roc.xlsx", sheet = "c")
+}
+
 counts_data <- as.data.frame(counts_data)
 rownames(counts_data) <- counts_data[, 1]  
 counts_data <- counts_data[, -1]                                  
 counts_data[is.na(counts_data)] <- 0
-counts_data1 <- read_excel("tw_th_roc.xlsx", sheet = "tw")                     
 counts_data1 <- as.data.frame(counts_data1)
 rownames(counts_data1) <- counts_data1[, 1] 
 counts_data1 <- counts_data1[, -1]                              
